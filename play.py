@@ -1,12 +1,10 @@
-#!/home/advait/anaconda3/bin/python
 import pyaudio
 import wave
 import time
 import sys
 import os
 
-def play_audio(file_name="voice.wav"):
-    path = os.getcwd()+"/recordings/"+file_name
+def play_audio(path):
 
     if not os.path.isfile(path):
         print("File doesnot exist. Exiting.")
@@ -43,7 +41,3 @@ def play_audio(file_name="voice.wav"):
 
     # close PyAudio (7)
     p.terminate()
-
-
-if __name__=="__main__":
-    play_audio()

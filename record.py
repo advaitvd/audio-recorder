@@ -1,14 +1,15 @@
-#!/home/advait/anaconda3/bin/python
 import pyaudio
 import wave
 import os
 
-def record_audio(CHUNK=1024,
-                FORMAT=pyaudio.paInt16,
-                CHANNELS=2,
-                RATE=44100,
-                RECORD_SECONDS=5,
-                WAVE_OUTPUT_FILENAME="voice.wav"):
+def record_audio(
+    WAVE_OUTPUT_FILENAME,
+    RECORD_SECONDS=5,
+    CHUNK=1024,
+    FORMAT=pyaudio.paInt16,
+    CHANNELS=2,
+    RATE=44100
+):
 
     p = pyaudio.PyAudio()
 
@@ -45,7 +46,3 @@ def record_audio(CHUNK=1024,
     wf.setframerate(RATE)
     wf.writeframes(b''.join(frames))
     wf.close()
-
-
-if __name__=="__main__":
-    record_audio()
