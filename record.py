@@ -35,8 +35,7 @@ def record_audio(
 
     path = os.getcwd()+"/recordings/"
 
-    if not os.path.exists(path=path):
-        os.makedirs(path)
+    os.system(f'mkdir -p {path}')
 
     path+=WAVE_OUTPUT_FILENAME
 
